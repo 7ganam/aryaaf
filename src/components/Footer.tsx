@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { NAVIGATION_ITEMS } from "@/lib/constants";
 import { Facebook, Twitter, Youtube, Instagram } from "lucide-react";
 
 interface FooterProps {
@@ -70,14 +71,7 @@ export function Footer({ className }: FooterProps) {
                 روابط سريعة
               </h3>
               <ul className="space-y-3">
-                {[
-                  "الموارد",
-                  "السياسات",
-                  "الأحداث",
-                  "اللجان الفرعية",
-                  "الأخبار",
-                  "من نحن",
-                ].map((link) => (
+                {NAVIGATION_ITEMS.map((link) => (
                   <li key={link}>
                     <a
                       href={`#${link.replace(/\s+/g, "-").toLowerCase()}`}

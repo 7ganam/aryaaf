@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { SECTION_IDS } from "@/lib/constants";
 
 interface Service {
   id: number;
@@ -17,31 +18,33 @@ interface OurServicesProps {
 const services: Service[] = [
   {
     id: 1,
-    title: "الاستشارات الزراعية",
+    title: "استصلاح الأراضي",
     description:
-      "نقدم استشارات متخصصة في مجال الزراعة لمساعدتك في تحسين إنتاجيتك الزراعية",
-    image:
-      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "نساهم في رسم خريطة التنمية الزراعية والصناعية، مستلهمين جهود الخبراء في استكشاف أفضل المناطق الصالحة للاستصلاح",
+    image: "/images/services/landfixing.jpg",
   },
   {
     id: 2,
-    title: "التدريب والتطوير",
-    description: "برامج تدريبية متقدمة لتطوير مهارات المزارعين وتحديث تقنياتهم",
-    image:
-      "https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    title: "اعداد شبكات",
+    description:
+      "حلول متكاملة لتصميم وتنفيذ شبكات ري حديثة وذكية، تضمن كفاءة استخدام المياه وزيادة الإنتاجية الزراعية.",
+    image: "/images/services/shabkaat.jpg",
   },
   {
     id: 3,
-    title: "البحوث والتطوير",
-    description: "إجراء بحوث علمية متطورة لتطوير تقنيات زراعية حديثة ومستدامة",
-    image:
-      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    title: "تركيب انظمة طاقة شمسية",
+    description:
+      "تركيب أنظمة شمسية متكاملة لتوفير الطاقة النظيفة لمزارعك ومشروعاتك، بأعلى كفاءة وأقل تكلفة تشغيل.",
+    image: "/images/services/energy.jpg",
   },
 ];
 
 export function OurServices({ className }: OurServicesProps) {
   return (
-    <div className={cn("py-20 bg-gray-50", className)}>
+    <div
+      id={SECTION_IDS.SERVICES}
+      className={cn("py-20 bg-gray-50", className)}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary mb-4 font-arabic">
@@ -84,8 +87,8 @@ export function OurServices({ className }: OurServicesProps) {
           <div className="text-center group relative">
             <div className="relative mb-6 overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300">
               <Image
-                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="الزراعة العضوية"
+                src="/images/services/zaytoon.jpg"
+                alt=""
                 width={400}
                 height={300}
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -94,10 +97,11 @@ export function OurServices({ className }: OurServicesProps) {
             </div>
             <div className="bg-white p-4 shadow-sm w-[90%] mx-auto absolute bottom-[-40px] left-0 right-0 z-10">
               <h3 className="text-2xl font-bold text-primary mb-4 font-arabic">
-                الزراعة العضوية
+                مزارع نخيل وزيتون
               </h3>
               <p className="text-gray-600 leading-relaxed font-arabic">
-                تطوير أساليب الزراعة العضوية المستدامة للحفاظ على البيئة
+                تصميم وبناء مزارع نخيل وزيتون ومحاصيل متنوعة، بخطط متكاملة من
+                البداية للإنتاج، لضمان أعلى جودة واستدامة.
               </p>
             </div>
           </div>
@@ -105,8 +109,8 @@ export function OurServices({ className }: OurServicesProps) {
           <div className="text-center group relative">
             <div className="relative mb-6 overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300">
               <Image
-                src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="الري الذكي"
+                src="/images/services/investors.jpg"
+                alt=""
                 width={400}
                 height={300}
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -115,11 +119,13 @@ export function OurServices({ className }: OurServicesProps) {
             </div>
             <div className="bg-white p-4 shadow-sm w-[90%] mx-auto absolute bottom-[-40px] left-0 right-0 z-10">
               <h3 className="text-2xl font-bold text-primary mb-4 font-arabic">
-                الري الذكي
+                متابعة مستمرة
               </h3>
               <p className="text-gray-600 leading-relaxed font-arabic">
-                أنظمة ري متطورة تعتمد على التكنولوجيا لتوفير المياه
+                متابعة مستمرة وتقديم حلول مبتكرة تضمن نجاح مشروعاتك الزراعية
+                واستدامتها.
               </p>
+              <div className="h-6 w-full"></div>
             </div>
           </div>
         </div>

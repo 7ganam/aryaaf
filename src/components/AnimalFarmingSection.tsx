@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { SECTION_IDS } from "@/lib/constants";
 
 interface AnimalFarmingSectionProps {
   className?: string;
@@ -18,7 +19,10 @@ const farmingPoints = [
 
 export function AnimalFarmingSection({ className }: AnimalFarmingSectionProps) {
   return (
-    <div className={cn("py-20 bg-white", className)}>
+    <div
+      id={SECTION_IDS.ANIMAL_FARMING}
+      className={cn("py-20 bg-white", className)}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
@@ -64,23 +68,14 @@ export function AnimalFarmingSection({ className }: AnimalFarmingSectionProps) {
                 ))}
               </ul>
             </div>
-
-            <div className="pt-4">
-              <button
-                type="button"
-                className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors duration-200 font-arabic"
-              >
-                تعرف على المزيد
-              </button>
-            </div>
           </div>
 
           {/* Right Column - Image */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="مزرعة حيوانية حديثة"
+                src="/images/fish.jpg"
+                alt=""
                 width={600}
                 height={500}
                 className="w-full h-[500px] object-cover"

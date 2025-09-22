@@ -2,6 +2,8 @@
 
 import { useState, useId } from "react";
 import { cn } from "@/lib/utils";
+import { SECTION_IDS } from "@/lib/constants";
+import { GOOGLE_APPS_SCRIPT_URL } from "@/lib/config";
 
 interface ContactUsFormProps {
   className?: string;
@@ -40,24 +42,43 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
+    try {
+      const response = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: "Contact Form",
+        }),
       });
-    }, 3000);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+        }, 3000);
+      } else {
+        throw new Error(result.error || "Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // You might want to show an error message to the user
+      alert("حدث خطأ في إرسال النموذج. يرجى المحاولة مرة أخرى.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -79,7 +100,7 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
   }
 
   return (
-    <div className={cn("py-20 bg-white", className)}>
+    <div id={SECTION_IDS.CONTACT} className={cn("py-20 bg-white", className)}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary mb-4 font-arabic">
@@ -90,7 +111,7 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1  gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
@@ -99,7 +120,7 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
               </h3>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 flex gap-6">
               <div className="flex items-start space-x-4 space-x-reverse">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                   <svg

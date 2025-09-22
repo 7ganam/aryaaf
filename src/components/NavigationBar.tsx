@@ -3,15 +3,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import {
-  Search,
-  Facebook,
-  Twitter,
-  Youtube,
-  Instagram,
-  Menu,
-  X,
-} from "lucide-react";
+import { NAVIGATION_ITEMS } from "@/lib/constants";
+import { Facebook, Twitter, Youtube, Instagram, Menu, X } from "lucide-react";
 
 interface NavigationBarProps {
   className?: string;
@@ -53,7 +46,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo (Right Side) */}
-          <div className="flex items-center space-x-reverse space-x-4">
+          <div className="flex items-center space-x- space-x-4">
             <div className="flex-shrink-0">
               <Image
                 src="/ARYAF.png"
@@ -68,15 +61,8 @@ export function NavigationBar({ className }: NavigationBarProps) {
 
           {/* Navigation Links (Center) */}
           <div className="hidden lg:block">
-            <div className="flex items-center space-x-reverse space-x-8">
-              {[
-                "الموارد",
-                "السياسات",
-                "الأحداث",
-                "اللجان الفرعية",
-                "الأخبار",
-                "من نحن",
-              ].map((item) => (
+            <div className="flex items-center space-x- space-x-8">
+              {NAVIGATION_ITEMS.map((item) => (
                 <a
                   key={item}
                   href={`#${item.replace(/\s+/g, "-").toLowerCase()}`}
@@ -89,7 +75,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
           </div>
 
           {/* Social Media Icons and Search (Left Side) */}
-          <div className="flex items-center space-x-reverse space-x-4">
+          <div className="flex items-center space-x- space-x-4">
             {/* Social Media Icons */}
             <div className="flex items-center space-x-4 ">
               <button
@@ -181,14 +167,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
             {/* Drawer Content */}
             <div className="flex-1 px-6 py-4">
               <nav className="space-y-2">
-                {[
-                  "الموارد",
-                  "السياسات",
-                  "الأحداث",
-                  "اللجان الفرعية",
-                  "الأخبار",
-                  "من نحن",
-                ].map((item) => (
+                {NAVIGATION_ITEMS.map((item) => (
                   <a
                     key={item}
                     href={`#${item.replace(/\s+/g, "-").toLowerCase()}`}
@@ -205,7 +184,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
                 <h3 className="text-sm font-medium text-gray-900 mb-4">
                   تابعنا
                 </h3>
-                <div className="flex space-x-reverse space-x-4">
+                <div className="flex space-x- space-x-4">
                   <button
                     type="button"
                     className="text-accent hover:text-accent/80 transition-colors duration-200"

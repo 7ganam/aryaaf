@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { SECTION_IDS } from "@/lib/constants";
 
 interface GoogleMapsSectionProps {
   className?: string;
@@ -8,7 +9,10 @@ interface GoogleMapsSectionProps {
 
 export function GoogleMapsSection({ className }: GoogleMapsSectionProps) {
   return (
-    <div className={cn("py-20 bg-gray-50", className)}>
+    <div
+      id={SECTION_IDS.LOCATION}
+      className={cn("py-20 bg-gray-50", className)}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4 font-arabic">

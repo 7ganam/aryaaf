@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaCarouselType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { cn } from "@/lib/utils";
+import { SECTION_IDS } from "@/lib/constants";
 
 interface SlideData {
   id: number;
@@ -50,6 +51,7 @@ export function FullHeightSlider({ slides, className }: FullHeightSliderProps) {
 
   return (
     <div
+      id={SECTION_IDS.HOME}
       className={cn("relative h-screen w-full overflow-hidden ", className)}
       dir="ltr"
     >
@@ -66,7 +68,7 @@ export function FullHeightSlider({ slides, className }: FullHeightSliderProps) {
               >
                 {/* Background Image */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                  className="absolute inset-0 bg-cover bg-right bg-no-repeat "
                   style={{ backgroundImage: `url(${slide.image})` }}
                 />
 
