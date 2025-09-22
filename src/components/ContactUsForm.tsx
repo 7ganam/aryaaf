@@ -3,7 +3,6 @@
 import { useState, useId } from "react";
 import { cn } from "@/lib/utils";
 import { SECTION_IDS } from "@/lib/constants";
-import { GOOGLE_APPS_SCRIPT_URL } from "@/lib/config";
 
 interface ContactUsFormProps {
   className?: string;

@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
@@ -6,7 +7,6 @@ export async function POST(request: NextRequest) {
 
     // Get the Google Apps Script URL from environment variables
     const googleScriptUrl = process.env.GOOGLE_APPS_SCRIPT_URL;
-    console.log(googleScriptUrl);
 
     if (!googleScriptUrl) {
       return NextResponse.json(

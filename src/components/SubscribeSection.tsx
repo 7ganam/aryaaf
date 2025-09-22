@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { GOOGLE_APPS_SCRIPT_URL } from "@/lib/config";
 
 interface SubscribeSectionProps {
   className?: string;
