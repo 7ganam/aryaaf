@@ -119,7 +119,7 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
               </h3>
             </div>
 
-            <div className="space-y-6 flex gap-6">
+            <div className="space-y-6 flex gap-6 md:flex-row flex-col">
               <div className="flex items-start space-x-4 space-x-reverse">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                   <svg

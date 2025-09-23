@@ -39,10 +39,8 @@ export default function Home() {
   return (
     <div dir="rtl">
       <NavigationBar />
-      <div className="relative">
-        <FullHeightSlider slides={slides} />
-        <SubscribeSection className="absolute -bottom-16 left-0 right-0" />
-      </div>
+      <FullHeightSlider slides={slides} />
+      <SubscribeSection />
 
       {/* Our Services Section */}
       <OurServices />

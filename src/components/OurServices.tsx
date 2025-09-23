@@ -56,7 +56,7 @@ export function OurServices({ className }: OurServicesProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
           {services.map((service) => (
             <div key={service.id} className="text-center group relative">
               <div className="relative mb-6 overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300 ">
@@ -83,7 +83,7 @@ export function OurServices({ className }: OurServicesProps) {
 
         <div className="mt-32 text-center mb-16"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8">
           <div className="text-center group relative">
             <div className="relative mb-6 overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300">
               <Image

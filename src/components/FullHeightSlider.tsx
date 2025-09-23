@@ -52,11 +52,34 @@ export function FullHeightSlider({ slides, className }: FullHeightSliderProps) {
   return (
     <div
       id={SECTION_IDS.HOME}
-      className={cn("relative h-screen w-full overflow-hidden ", className)}
+      className={cn(
+        "relative w-full overflow-hidden mt-[70px] md:mt-0",
+        className
+      )}
       dir="ltr"
     >
-      <div className="embla h-full" ref={emblaRef}>
-        <div className="embla__container flex h-full">
+      {/* Mobile: Show only first image */}
+      <div className="md:hidden w-full">
+        {slides.length > 0 && (
+          <div
+            className="w-full flex items-center justify-center relative rounded-lg overflow-hidden"
+            style={{ backgroundColor: slides[0].backgroundColor }}
+          >
+            <div
+              className="w-full bg-contain bg-top bg-no-repeat bg-red-50"
+              style={{
+                backgroundImage: `url(${slides[2].image})`,
+                aspectRatio: "16/9",
+                minHeight: "200px",
+              }}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Desktop: Show carousel */}
+      <div className="hidden md:block embla" ref={emblaRef}>
+        <div className="embla__container flex">
           {slides.map((slide) => (
             <div
               key={slide.id}
@@ -68,47 +91,23 @@ export function FullHeightSlider({ slides, className }: FullHeightSliderProps) {
               >
                 {/* Background Image */}
                 <div
-                  className="absolute inset-0 bg-cover bg-right bg-no-repeat "
-                  style={{ backgroundImage: `url(${slide.image})` }}
+                  className="w-full bg-contain bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${slide.image})`,
+                    aspectRatio: "16/9",
+                    minHeight: "400px",
+                  }}
                 />
-
-                {/* Content Overlay */}
-                {/* <div className="relative z-10 text-center px-8 max-w-4xl mx-auto">
-                  <h1 className="text-5xl md:text-7xl font-bold text-accent mb-6 drop-shadow-lg">
-                    {slide.title}
-                  </h1>
-                  <p className="text-xl md:text-2xl text-accent/90 drop-shadow-md">
-                    {slide.description}
-                  </p>
-                </div> */}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Dots Navigation */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-        {scrollSnaps.map((snap, index) => (
-          <button
-            key={`dot-${snap}`}
-            type="button"
-            className={cn(
-              "w-3 h-3 rounded-full transition-all duration-300",
-              index === selectedIndex
-                ? "bg-white scale-125"
-                : "bg-white/50 hover:bg-white/75"
-            )}
-            onClick={() => scrollTo(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Desktop only */}
       <button
         type="button"
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+        className="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
         onClick={() => emblaApi?.scrollPrev()}
         aria-label="Previous slide"
       >
@@ -130,7 +129,7 @@ export function FullHeightSlider({ slides, className }: FullHeightSliderProps) {
 
       <button
         type="button"
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+        className="hidden md:block absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
         onClick={() => emblaApi?.scrollNext()}
         aria-label="Next slide"
       >

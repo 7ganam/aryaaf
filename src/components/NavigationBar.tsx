@@ -38,28 +38,44 @@ export function NavigationBar({ className }: NavigationBarProps) {
         "fixed left-0 right-0 z-50 transition-all duration-300 font-arabic",
         isScrolled
           ? "top-0 bg-white shadow-lg py-2"
-          : "top-4 bg-white/95 backdrop-blur-sm py-3",
+          : "top-0 md:top-4 md:bg-white/65 md:backdrop-blur-sm md:py-3",
         className
       )}
       dir="rtl"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo (Right Side) */}
-          <div className="flex items-center space-x- space-x-4">
+          {/* Mobile menu button - Left side on mobile */}
+          <div className="lg:hidden">
+            <button
+              type="button"
+              onClick={toggleMobileMenu}
+              className="p-2 rounded-md transition-colors duration-300 text-gray-700 hover:bg-gray-100"
+              aria-label={isMobileMenuOpen ? "إغلاق القائمة" : "فتح القائمة"}
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6 transition-transform duration-300" />
+              ) : (
+                <Menu className="h-6 w-6 transition-transform duration-300" />
+              )}
+            </button>
+          </div>
+
+          {/* Logo (Center) */}
+          <div className="flex items-center space-x- space-x-4 mt-2">
             <div className="flex-shrink-0">
               <Image
                 src="/ARYAF.png"
                 alt="Aryaaf Logo"
                 width={60}
                 height={60}
-                className="h-20 w-auto object-contain"
+                className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
                 priority
               />
             </div>
           </div>
 
-          {/* Navigation Links (Center) */}
+          {/* Navigation Links (Center) - Desktop only */}
           <div className="hidden lg:block">
             <div className="flex items-center space-x- space-x-8">
               {NAVIGATION_ITEMS.map((item) => (
@@ -74,8 +90,8 @@ export function NavigationBar({ className }: NavigationBarProps) {
             </div>
           </div>
 
-          {/* Social Media Icons and Search (Left Side) */}
-          <div className="flex items-center space-x- space-x-4">
+          {/* Social Media Icons and Search (Right Side) - Desktop only */}
+          <div className="hidden lg:flex items-center space-x- space-x-4">
             {/* Social Media Icons */}
             <div className="flex items-center space-x-4 ">
               <button
@@ -109,21 +125,8 @@ export function NavigationBar({ className }: NavigationBarProps) {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button
-              type="button"
-              onClick={toggleMobileMenu}
-              className="p-2 rounded-md transition-colors duration-300 text-gray-700 hover:bg-gray-100"
-              aria-label={isMobileMenuOpen ? "إغلاق القائمة" : "فتح القائمة"}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6 transition-transform duration-300" />
-              ) : (
-                <Menu className="h-6 w-6 transition-transform duration-300" />
-              )}
-            </button>
-          </div>
+          {/* Empty div for mobile to balance the layout */}
+          <div className="lg:hidden w-10"></div>
         </div>
       </div>
 
@@ -136,7 +139,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm z-40"
           onClick={closeMobileMenu}
           role="button"
           tabIndex={0}
@@ -146,26 +149,29 @@ export function NavigationBar({ className }: NavigationBarProps) {
         {/* Drawer */}
         <div
           className={cn(
-            "absolute left-0 top-0 h-full w-80 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-in-out",
+            "absolute left-0 top-0 h-full w-80 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-50",
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           )}
+          dir="rtl"
         >
           <div className="flex flex-col h-full">
             {/* Drawer Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <h2 className="text-xl font-semibold text-gray-900">القائمة</h2>
+            <div className="flex items-center justify-between p-6 pb-0 border-b border-gray-200">
+              <h2 className="text-xl font-semibold text-gray-900 font-arabic">
+                القائمة
+              </h2>
               <button
                 type="button"
                 onClick={closeMobileMenu}
                 className="p-2 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100"
-                aria-label="Close menu"
+                aria-label="إغلاق القائمة"
               >
                 <X className="h-6 w-6" />
               </button>
             </div>
 
             {/* Drawer Content */}
-            <div className="flex-1 px-6 py-4">
+            <div className="flex-1 px-6 py-4 bg-white">
               <nav className="space-y-2">
                 {NAVIGATION_ITEMS.map((item) => (
                   <a
@@ -181,7 +187,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
 
               {/* Social Media Links in Mobile */}
               <div className="mt-8 pt-6 border-t border-gray-200">
-                <h3 className="text-sm font-medium text-gray-900 mb-4">
+                <h3 className="text-sm font-medium text-gray-900 mb-4 font-arabic">
                   تابعنا
                 </h3>
                 <div className="flex space-x- space-x-4">
@@ -218,11 +224,11 @@ export function NavigationBar({ className }: NavigationBarProps) {
             </div>
 
             {/* Drawer Footer */}
-            <div className="p-6 border-t border-gray-200">
+            <div className="p-6 border-t border-gray-200 bg-white">
               <button
                 type="button"
                 onClick={closeMobileMenu}
-                className="w-full px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                className="w-full px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors duration-200 font-arabic"
               >
                 ابدأ الآن
               </button>

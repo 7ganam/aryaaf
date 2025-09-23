@@ -54,11 +54,11 @@ export function SubscribeSection({ className }: SubscribeSectionProps) {
   };
 
   return (
-    <div className={cn("relative z-30 bg-white shadow-2xl abs", className)}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 absolute bottom-0 left-0 right-0">
+    <div className={cn("relative z-30 ", className)}>
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:absolute md:top-1/2 md:-translate-y-1/2  w-full">
         {isSubscribed ? (
           // Success state with confetti-like animation
-          <div className="max-w-2xl mx-auto shadow-lg bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8 text-center">
+          <div className="max-w-2xl mx-auto shadow-lg bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4 sm:p-8 text-center">
             <div className="relative">
               {/* Confetti animation */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -70,11 +70,11 @@ export function SubscribeSection({ className }: SubscribeSectionProps) {
 
               {/* Success content */}
               <div className="relative z-10">
-                <div className="text-4xl mb-4">🎉</div>
-                <h3 className="text-xl font-bold text-green-800 mb-2 font-arabic">
+                <div className="text-2xl sm:text-4xl mb-2 sm:mb-4">🎉</div>
+                <h3 className="text-lg sm:text-xl font-bold text-green-800 mb-1 sm:mb-2 font-arabic">
                   تم الاشتراك بنجاح!
                 </h3>
-                <p className="text-green-600 font-arabic">
+                <p className="text-sm sm:text-base text-green-600 font-arabic">
                   شكراً لك على الاشتراك في نشرتنا الإخبارية
                 </p>
               </div>
@@ -84,14 +84,14 @@ export function SubscribeSection({ className }: SubscribeSectionProps) {
           // Normal form state
           <form
             onSubmit={handleSubmit}
-            className="flex gap-0 max-w-2xl mx-auto shadow-lg"
+            className="flex flex-col sm:flex-row gap-0 max-w-2xl mx-auto shadow-lg"
           >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="أدخل بريدك الإلكتروني"
-              className="flex-1 px-6 py-4 text-lg border-0 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-accent focus:bg-white transition-colors duration-200 font-arabic"
+              className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg border-0 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-accent focus:bg-white transition-colors duration-200 font-arabic"
               required
               dir="rtl"
               disabled={isSubmitting}
@@ -99,7 +99,7 @@ export function SubscribeSection({ className }: SubscribeSectionProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-8 py-4 bg-accent text-accent-foreground font-semibold text-lg hover:bg-accent/90 transition-colors duration-200 font-arabic disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-[120px]"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-accent text-accent-foreground font-semibold text-base sm:text-lg hover:bg-accent/90 transition-colors duration-200 font-arabic disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-[100px] sm:min-w-[120px]"
             >
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
