@@ -107,7 +107,7 @@ export function SubscribeSection({ className }: SubscribeSectionProps) {
                   <span>جاري الإرسال...</span>
                 </div>
               ) : (
-                "اشترك الآن"
+                "للاستفسارات"
               )}
             </button>
           </form>

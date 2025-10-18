@@ -81,7 +81,13 @@ export function NavigationBar({ className }: NavigationBarProps) {
               {NAVIGATION_ITEMS.map((item) => (
                 <a
                   key={item}
-                  href={`#${item.replace(/\s+/g, "-").toLowerCase()}`}
+                  href={
+                    item === "الرئيسية"
+                      ? "/"
+                      : item === "من نحن"
+                      ? "/about"
+                      : `#${item.replace(/\s+/g, "-").toLowerCase()}`
+                  }
                   className="text-primary hover:text-primary/80 font-medium text-lg transition-colors duration-200"
                 >
                   {item}
@@ -176,7 +182,13 @@ export function NavigationBar({ className }: NavigationBarProps) {
                 {NAVIGATION_ITEMS.map((item) => (
                   <a
                     key={item}
-                    href={`#${item.replace(/\s+/g, "-").toLowerCase()}`}
+                    href={
+                      item === "الرئيسية"
+                        ? "/"
+                        : item === "من نحن"
+                        ? "/about"
+                        : `#${item.replace(/\s+/g, "-").toLowerCase()}`
+                    }
                     onClick={closeMobileMenu}
                     className="block px-3 py-3 text-base font-medium text-primary hover:bg-primary/10 hover:text-primary/80 rounded-md transition-colors duration-200"
                   >

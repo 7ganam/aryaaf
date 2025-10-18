@@ -70,17 +70,32 @@ export function AnimalFarmingSection({ className }: AnimalFarmingSectionProps) {
             </div>
           </div>
 
-          {/* Right Column - Image */}
+          {/* Right Column - Stacked Images */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <Image
-                src="/images/fish.jpg"
-                alt=""
-                width={600}
-                height={500}
-                className="w-full h-[500px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="relative w-full rounded-2xl">
+              {/* Animals Image */}
+              <div className="w-full">
+                <Image
+                  src="/images/animals.jpg"
+                  alt="الثروة الحيوانية"
+                  width={600}
+                  height={240}
+                  className="w-full h-[240px] object-cover rounded-t-2xl"
+                  priority
+                />
+              </div>
+
+              {/* Fish Image */}
+              <div className="w-full">
+                <Image
+                  src="/images/fish2.jpg"
+                  alt="تربية الأسماك"
+                  width={600}
+                  height={240}
+                  className="w-full h-[240px] object-cover rounded-b-2xl"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Decorative elements */}
