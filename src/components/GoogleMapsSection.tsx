@@ -19,7 +19,7 @@ export function GoogleMapsSection({ className }: GoogleMapsSectionProps) {
             موقعنا
           </h2>
           <p className="text-xl text-gray-600 font-arabic">
-            سيوة، محافظة مرسى مطروح
+            محافظة مرسى مطروح - سيوة
           </p>
         </div>
 
