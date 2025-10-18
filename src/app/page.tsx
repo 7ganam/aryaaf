@@ -7,6 +7,7 @@ import { OurFuturePlans } from "@/components/OurFuturePlans";
 import { ContactUsForm } from "@/components/ContactUsForm";
 import { GoogleMapsSection } from "@/components/GoogleMapsSection";
 import { Footer } from "@/components/Footer";
+import { Aboutus } from "@/components/Aboutus";
 
 const slides = [
   {
@@ -50,6 +51,9 @@ export default function Home() {
 
       {/* Our Future Plans Section */}
       <OurFuturePlans />
+
+      {/* About Us Section */}
+      <Aboutus />
 
       {/* Contact Us Form Section */}
       <ContactUsForm />

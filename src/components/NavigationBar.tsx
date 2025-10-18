@@ -67,9 +67,9 @@ export function NavigationBar({ className }: NavigationBarProps) {
               <Image
                 src="/ARYAF.png"
                 alt="Aryaaf Logo"
-                width={60}
-                height={60}
-                className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
+                width={400}
+                height={400}
+                className="h-12 sm:h-12 lg:h-12 w-auto object-contain"
                 priority
               />
             </div>
@@ -84,8 +84,6 @@ export function NavigationBar({ className }: NavigationBarProps) {
                   href={
                     item === "الرئيسية"
                       ? "/"
-                      : item === "من نحن"
-                      ? "/about"
                       : `#${item.replace(/\s+/g, "-").toLowerCase()}`
                   }
                   className="text-primary hover:text-primary/80 font-medium text-lg transition-colors duration-200"
@@ -114,13 +112,15 @@ export function NavigationBar({ className }: NavigationBarProps) {
               >
                 <Youtube className="h-6 w-6" />
               </button>
-              <button
-                type="button"
-                className="text-accent hover:text-accent/80 transition-colors duration-200 0"
+              <a
+                href="https://www.facebook.com/people/ARYAF-%D8%A3%D8%B1%D9%8A%D8%A7%D9%81/61579916394431/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors duration-200"
                 aria-label="تابعنا على فيسبوك"
               >
                 <Facebook className="h-6 w-6" />
-              </button>
+              </a>
               <button
                 type="button"
                 className="text-accent hover:text-accent/80 transition-colors duration-200 0"
@@ -185,8 +185,6 @@ export function NavigationBar({ className }: NavigationBarProps) {
                     href={
                       item === "الرئيسية"
                         ? "/"
-                        : item === "من نحن"
-                        ? "/about"
                         : `#${item.replace(/\s+/g, "-").toLowerCase()}`
                     }
                     onClick={closeMobileMenu}
