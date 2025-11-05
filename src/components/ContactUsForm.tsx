@@ -148,7 +148,7 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
                     العنوان
                   </h4>
                   <p className="text-gray-600 font-arabic">
-                    ابوحمص و ميدان السلام
+                    مطروح- سيوه -شارع السوق -بجوار مطعم علي عليوه{" "}
                   </p>
                 </div>
               </div>
@@ -174,7 +174,25 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
                   <h4 className="font-semibold text-gray-900 mb-1 font-arabic">
                     الهاتف
                   </h4>
-                  <p className="text-gray-600 font-arabic">+201132454567</p>
+                  <div className="flex items-center gap-4 font-arabic">
+                    <a
+                      href="https://wa.me/201222802203"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-accent transition-colors"
+                    >
+                      01222802203
+                    </a>
+                    <span className="text-gray-400">|</span>
+                    <a
+                      href="https://wa.me/201222802207"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-accent transition-colors"
+                    >
+                      01222802207
+                    </a>
+                  </div>
                 </div>
               </div>
 

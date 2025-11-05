@@ -19,14 +19,14 @@ export function GoogleMapsSection({ className }: GoogleMapsSectionProps) {
             موقعنا
           </h2>
           <p className="text-xl text-gray-600 font-arabic">
-            محافظة مرسى مطروح - سيوة
+            مطروح- سيوه -شارع السوق -بجوار مطعم علي عليوه{" "}
           </p>
         </div>
 
         <div className="relative">
           <div className="relative overflow-hidden rounded-2xl shadow-sm border border-gray-200">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.123456789!2d25.5179598!3d29.2053691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x147aafad76b1055b:0x60896c52a8b064a4!2sSiwa%2C%20Marsa%20Matrouh%20Governorate%205011346!5e0!3m2!1sen!2seg!4v1234567890123!5m2!1sen!2seg"
+              src="https://www.google.com/maps?q=29.203201,25.514411&hl=ar&z=15&output=embed"
               width="100%"
               height="500"
               style={{ border: 0 }}

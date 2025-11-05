@@ -274,12 +274,21 @@ export function OurFuturePlans({ className }: OurFuturePlansProps) {
             <p className="text-gray-600 mb-6 font-arabic">
               انضم إلينا في رحلة بناء مستقبل أفضل للزراعة والاستدامة
             </p>
-            <button
-              type="button"
-              className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-primary/90 hover:to-accent/90 transition-all duration-300 transform hover:scale-105 font-arabic shadow-lg"
-            >
-              انضم إلينا الآن
-            </button>
+            <div className="flex items-center justify-center gap-4">
+              <a
+                href="https://wa.me/201222802203"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-primary/90 hover:to-accent/90 transition-all duration-300 transform hover:scale-105 font-arabic shadow-lg"
+              >
+                انضم إلينا الآن
+              </a>
+              <div className="flex items-center gap-2 text-gray-600 font-arabic">
+                <span>01222802203</span>
+                <span className="text-gray-400">|</span>
+                <span>01222802207</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

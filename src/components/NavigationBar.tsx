@@ -4,7 +4,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
-import { Facebook, Twitter, Youtube, Instagram, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import {
+  siInstagram,
+  siYoutube,
+  siFacebook,
+  siX,
+  siTiktok,
+} from "simple-icons";
 
 interface NavigationBarProps {
   className?: string;
@@ -30,6 +37,32 @@ export function NavigationBar({ className }: NavigationBarProps) {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  // Simple Icons component helper
+  const SimpleIcon = ({
+    icon,
+    size = 24,
+    className,
+  }: {
+    icon: typeof siInstagram;
+    size?: number;
+    className?: string;
+  }) => {
+    return (
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        width={size}
+        height={size}
+        fill="currentColor"
+        className={className}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>{icon.title}</title>
+        <path d={icon.path} />
+      </svg>
+    );
   };
 
   return (
@@ -98,20 +131,24 @@ export function NavigationBar({ className }: NavigationBarProps) {
           <div className="hidden lg:flex items-center space-x- space-x-4">
             {/* Social Media Icons */}
             <div className="flex items-center space-x-4 ">
-              <button
-                type="button"
-                className="text-accent hover:text-accent/80 transition-colors duration-200 0"
+              <a
+                href="https://www.instagram.com/aryaf.egy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors duration-200"
                 aria-label="تابعنا على إنستغرام"
               >
-                <Instagram className="h-6 w-6" />
-              </button>
-              <button
-                type="button"
-                className="text-accent hover:text-accent/80 transition-colors duration-200 0"
+                <SimpleIcon icon={siInstagram} size={24} className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.youtube.com/@user-xg9ir6zi6s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors duration-200"
                 aria-label="تابعنا على يوتيوب"
               >
-                <Youtube className="h-6 w-6" />
-              </button>
+                <SimpleIcon icon={siYoutube} size={24} className="h-6 w-6" />
+              </a>
               <a
                 href="https://www.facebook.com/people/ARYAF-%D8%A3%D8%B1%D9%8A%D8%A7%D9%81/61579916394431/"
                 target="_blank"
@@ -119,15 +156,26 @@ export function NavigationBar({ className }: NavigationBarProps) {
                 className="text-accent hover:text-accent/80 transition-colors duration-200"
                 aria-label="تابعنا على فيسبوك"
               >
-                <Facebook className="h-6 w-6" />
+                <SimpleIcon icon={siFacebook} size={24} className="h-6 w-6" />
               </a>
-              <button
-                type="button"
-                className="text-accent hover:text-accent/80 transition-colors duration-200 0"
-                aria-label="تابعنا على تويتر"
+              <a
+                href="https://x.com/AryafEgy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors duration-200"
+                aria-label="تابعنا على X"
               >
-                <Twitter className="h-6 w-6" />
-              </button>
+                <SimpleIcon icon={siX} size={24} className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@aryaf.egy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors duration-200"
+                aria-label="تابعنا على تيك توك"
+              >
+                <SimpleIcon icon={siTiktok} size={24} className="h-6 w-6" />
+              </a>
             </div>
           </div>
 
@@ -201,34 +249,63 @@ export function NavigationBar({ className }: NavigationBarProps) {
                   تابعنا
                 </h3>
                 <div className="flex space-x- space-x-4">
-                  <button
-                    type="button"
-                    className="text-accent hover:text-accent/80 transition-colors duration-200"
-                    aria-label="تابعنا على تويتر"
-                  >
-                    <Twitter className="h-6 w-6" />
-                  </button>
-                  <button
-                    type="button"
-                    className="text-accent hover:text-accent/80 transition-colors duration-200"
-                    aria-label="تابعنا على فيسبوك"
-                  >
-                    <Facebook className="h-6 w-6" />
-                  </button>
-                  <button
-                    type="button"
-                    className="text-accent hover:text-accent/80 transition-colors duration-200"
-                    aria-label="تابعنا على يوتيوب"
-                  >
-                    <Youtube className="h-6 w-6" />
-                  </button>
-                  <button
-                    type="button"
+                  <a
+                    href="https://www.instagram.com/aryaf.egy"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-accent hover:text-accent/80 transition-colors duration-200"
                     aria-label="تابعنا على إنستغرام"
                   >
-                    <Instagram className="h-6 w-6" />
-                  </button>
+                    <SimpleIcon
+                      icon={siInstagram}
+                      size={24}
+                      className="h-6 w-6"
+                    />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@user-xg9ir6zi6s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent/80 transition-colors duration-200"
+                    aria-label="تابعنا على يوتيوب"
+                  >
+                    <SimpleIcon
+                      icon={siYoutube}
+                      size={24}
+                      className="h-6 w-6"
+                    />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/people/ARYAF-%D8%A3%D8%B1%D9%8A%D8%A7%D9%81/61579916394431/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent/80 transition-colors duration-200"
+                    aria-label="تابعنا على فيسبوك"
+                  >
+                    <SimpleIcon
+                      icon={siFacebook}
+                      size={24}
+                      className="h-6 w-6"
+                    />
+                  </a>
+                  <a
+                    href="https://x.com/AryafEgy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent/80 transition-colors duration-200"
+                    aria-label="تابعنا على X"
+                  >
+                    <SimpleIcon icon={siX} size={24} className="h-6 w-6" />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@aryaf.egy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent/80 transition-colors duration-200"
+                    aria-label="تابعنا على تيك توك"
+                  >
+                    <SimpleIcon icon={siTiktok} size={24} className="h-6 w-6" />
+                  </a>
                 </div>
               </div>
             </div>
