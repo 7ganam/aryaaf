@@ -120,7 +120,7 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
             </div>
 
             <div className="space-y-6 flex gap-6 md:flex-row flex-col">
-              <div className="flex items-start space-x-4 space-x-reverse">
+              <div className="flex items-start space-x-4 space-x-reverse max-w-[300px] ">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                   <svg
                     className="w-6 h-6 text-accent"
@@ -153,7 +153,7 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4 space-x-reverse">
+              <div className="flex items-start space-x-4 space-x-reverse min-w-[300px]">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                   <svg
                     className="w-6 h-6 text-accent"
@@ -174,24 +174,27 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
                   <h4 className="font-semibold text-gray-900 mb-1 font-arabic">
                     الهاتف
                   </h4>
-                  <div className="flex items-center gap-4 font-arabic">
-                    <a
-                      href="https://wa.me/201222802203"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-accent transition-colors"
-                    >
-                      01222802203
-                    </a>
-                    <span className="text-gray-400">|</span>
-                    <a
-                      href="https://wa.me/201222802207"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-accent transition-colors"
-                    >
-                      01222802207
-                    </a>
+                  <div className="flex-col md:flex-row items-center gap-4 font-arabic ">
+                    <div>
+                      <a
+                        href="https://wa.me/201222802203"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-accent transition-colors"
+                      >
+                        01222802203
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        href="https://wa.me/201222802207"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-accent transition-colors"
+                      >
+                        01222802207
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -309,6 +312,9 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
                     <option value="تدريب">تدريب</option>
                     <option value="شراكة">شراكة</option>
                     <option value="شكوى">شكوى</option>
+                    <option value="حجز">حجز</option>
+                    <option value="حجز">شراء او تعاقد</option>
+
                     <option value="أخرى">أخرى</option>
                   </select>
                 </div>

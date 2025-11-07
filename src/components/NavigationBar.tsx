@@ -11,6 +11,7 @@ import {
   siFacebook,
   siX,
   siTiktok,
+  siWhatsapp,
 } from "simple-icons";
 
 interface NavigationBarProps {
@@ -176,6 +177,15 @@ export function NavigationBar({ className }: NavigationBarProps) {
               >
                 <SimpleIcon icon={siTiktok} size={24} className="h-6 w-6" />
               </a>
+              <a
+                href="https://wa.me/201222802203"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors duration-200"
+                aria-label="تواصل معنا على واتساب"
+              >
+                <SimpleIcon icon={siWhatsapp} size={24} className="h-6 w-6" />
+              </a>
             </div>
           </div>
 
@@ -305,6 +315,19 @@ export function NavigationBar({ className }: NavigationBarProps) {
                     aria-label="تابعنا على تيك توك"
                   >
                     <SimpleIcon icon={siTiktok} size={24} className="h-6 w-6" />
+                  </a>
+                  <a
+                    href="https://wa.me/201222802203"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent/80 transition-colors duration-200"
+                    aria-label="تواصل معنا على واتساب"
+                  >
+                    <SimpleIcon
+                      icon={siWhatsapp}
+                      size={24}
+                      className="h-6 w-6"
+                    />
                   </a>
                 </div>
               </div>

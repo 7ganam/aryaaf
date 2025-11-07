@@ -9,6 +9,7 @@ import {
   siFacebook,
   siX,
   siTiktok,
+  siWhatsapp,
 } from "simple-icons";
 
 interface FooterProps {
@@ -56,14 +57,14 @@ export function Footer({ className }: FooterProps) {
             <div className="mb-8 flex justify-center">
               <Image
                 src="/ARYAF.png"
-                alt="أرياف للزراعات الحديثه"
+                alt="أرياف للزراعات الحديثة"
                 width={180}
                 height={180}
                 className="object-contain"
               />
             </div>
             <p className="text-3xl md:text-4xl text-white/90 font-arabic">
-              شركة أرياف للزراعات الحديثه
+              شركة أرياف للزراعات الحديثة
             </p>
           </div>
 
@@ -114,11 +115,16 @@ export function Footer({ className }: FooterProps) {
                 className="text-white/80 hover:text-white transition-colors duration-200"
                 aria-label="تابعنا على إنستغرام"
               >
-                <SimpleIcon
-                  icon={siInstagram}
-                  size={24}
-                  className="h-6 w-6 mr-4"
-                />
+                <SimpleIcon icon={siInstagram} size={24} className="h-6 w-6" />
+              </a>
+              <a
+                href="https://wa.me/201222802203"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white transition-colors duration-200 mr-4"
+                aria-label="تواصل معنا على واتساب"
+              >
+                <SimpleIcon icon={siWhatsapp} size={24} className="h-6 w-6" />
               </a>
             </div>
 
@@ -169,7 +175,7 @@ export function Footer({ className }: FooterProps) {
             <span className="text-white/50">|</span>
             <a
               href="#موقعنا"
-              className="text-white/90 hover:text-white transition-colors duration-200 font-arabic"
+              className="mr-4 text-white/90 hover:text-white transition-colors duration-200 font-arabic"
             >
               موقعنا
             </a>

@@ -10,8 +10,8 @@ export const FORM_CONFIG = {
     name: "Contact Form",
     fields: ["name", "email", "phone", "subject", "message"],
   },
-  newsletterForm: {
-    name: "Newsletter",
+  inquiryForm: {
+    name: "inquiry",
     fields: ["email"],
   },
 };

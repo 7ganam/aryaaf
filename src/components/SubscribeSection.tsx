@@ -23,12 +23,12 @@ export function SubscribeSection({ className }: SubscribeSectionProps) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: "", // Newsletter signup doesn't have name
+            name: "",
             email: email,
             phone: "",
-            subject: "Newsletter Subscription",
-            message: "User subscribed to newsletter",
-            formType: "Newsletter",
+            subject: "inquiry",
+            message: "User submitted inquiry",
+            formType: "inquiry",
           }),
         });
 
@@ -70,12 +70,11 @@ export function SubscribeSection({ className }: SubscribeSectionProps) {
 
               {/* Success content */}
               <div className="relative z-10">
-                <div className="text-2xl sm:text-4xl mb-2 sm:mb-4">🎉</div>
                 <h3 className="text-lg sm:text-xl font-bold text-green-800 mb-1 sm:mb-2 font-arabic">
-                  تم الاشتراك بنجاح!
+                  تم استلام رسالتك بنجاح!
                 </h3>
                 <p className="text-sm sm:text-base text-green-600 font-arabic">
-                  شكراً لك على الاشتراك في نشرتنا الإخبارية
+                  شكراً لك على تواصلك معنا. سنقوم بالرد عليك في أقرب وقت ممكن.
                 </p>
               </div>
             </div>

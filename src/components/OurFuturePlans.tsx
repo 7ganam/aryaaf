@@ -274,7 +274,7 @@ export function OurFuturePlans({ className }: OurFuturePlansProps) {
             <p className="text-gray-600 mb-6 font-arabic">
               انضم إلينا في رحلة بناء مستقبل أفضل للزراعة والاستدامة
             </p>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
               <a
                 href="https://wa.me/201222802203"
                 target="_blank"

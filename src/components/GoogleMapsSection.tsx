@@ -26,7 +26,7 @@ export function GoogleMapsSection({ className }: GoogleMapsSectionProps) {
         <div className="relative">
           <div className="relative overflow-hidden rounded-2xl shadow-sm border border-gray-200">
             <iframe
-              src="https://www.google.com/maps?q=29.203201,25.514411&hl=ar&z=15&output=embed"
+              src="https://www.google.com/maps?q=29.203022,25.515329&hl=ar&z=19&output=embed"
               width="100%"
               height="500"
               style={{ border: 0 }}
