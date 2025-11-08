@@ -40,6 +40,11 @@ export function NavigationBar({ className }: NavigationBarProps) {
     setIsMobileMenuOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    closeMobileMenu();
+  };
+
   // Simple Icons component helper
   const SimpleIcon = ({
     icon,
@@ -97,7 +102,11 @@ export function NavigationBar({ className }: NavigationBarProps) {
 
           {/* Logo (Center) */}
           <div className="flex items-center space-x- space-x-4 mt-2">
-            <div className="flex-shrink-0">
+            <button
+              onClick={scrollToTop}
+              className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+              aria-label="العودة إلى الصفحة الرئيسية"
+            >
               <Image
                 src="/ARYAF.png"
                 alt="Aryaaf Logo"
@@ -106,7 +115,7 @@ export function NavigationBar({ className }: NavigationBarProps) {
                 className="h-12 sm:h-12 lg:h-12 w-auto object-contain"
                 priority
               />
-            </div>
+            </button>
           </div>
 
           {/* Navigation Links (Center) - Desktop only */}
