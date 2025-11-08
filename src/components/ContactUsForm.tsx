@@ -220,7 +220,7 @@ export function ContactUsForm({ className }: ContactUsFormProps) {
                   <h4 className="font-semibold text-gray-900 mb-1 font-arabic">
                     البريد الإلكتروني
                   </h4>
-                  <p className="text-gray-600 font-arabic">info@aryaaf.sa</p>
+                  <p className="text-gray-600 font-arabic">info@aryaf.org</p>
                 </div>
               </div>
             </div>
