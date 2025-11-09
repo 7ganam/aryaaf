@@ -341,17 +341,6 @@ export function NavigationBar({ className }: NavigationBarProps) {
                 </div>
               </div>
             </div>
-
-            {/* Drawer Footer */}
-            <div className="p-6 border-t border-gray-200 bg-white">
-              <button
-                type="button"
-                onClick={closeMobileMenu}
-                className="w-full px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors duration-200 font-arabic"
-              >
-                ابدأ الآن
-              </button>
-            </div>
           </div>
         </div>
       </div>

@@ -149,33 +149,33 @@ export function Footer({ className }: FooterProps) {
       </div>
 
       {/* Navigation Links */}
-      <div className="bg-amber-50/30 py-8">
+      <div className="bg-amber-50/30 py-6 md:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center space-x-6 space-x-reverse text-md">
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-sm md:text-base">
             <a
               href="#من-نحن"
               className="text-white/90 hover:text-white transition-colors duration-200 font-arabic"
             >
               من نحن
             </a>
-            <span className="text-white/50">|</span>
+            <span className="text-white/50 hidden sm:inline">|</span>
             <a
               href="#خدماتنا"
               className="text-white/90 hover:text-white transition-colors duration-200 font-arabic"
             >
               خدماتنا
             </a>
-            <span className="text-white/50">|</span>
+            <span className="text-white/50 hidden sm:inline">|</span>
             <a
               href="#تواصل-معنا"
               className="text-white/90 hover:text-white transition-colors duration-200 font-arabic"
             >
               تواصل معنا
             </a>
-            <span className="text-white/50">|</span>
+            <span className="text-white/50 hidden sm:inline">|</span>
             <a
               href="#موقعنا"
-              className="mr-4 text-white/90 hover:text-white transition-colors duration-200 font-arabic"
+              className="text-white/90 hover:text-white transition-colors duration-200 font-arabic"
             >
               موقعنا
             </a>
